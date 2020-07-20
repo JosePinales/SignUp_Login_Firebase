@@ -15,7 +15,7 @@
         android:layout_height="152dp"
         android:layout_gravity="center"
         android:paddingTop="6dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="80dp"
         android:contentDescription="logo"
         app:srcCompat="@drawable/logo1" />
 
@@ -33,7 +33,7 @@
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="50sp"
+        android:layout_marginTop="40sp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
@@ -81,12 +81,23 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20sp"
-        android:layout_marginBottom="10sp"
+        android:layout_marginBottom="25sp"
         android:text="Sign Up"
         android:textColor="@color/cardview_dark_background"
-        android:textSize="17sp"
+        android:textSize="20sp"
         android:onClick="Signup"
         tools:ignore="PrivateResource" />
+    <TextView
+        android:id="@+id/forgot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10sp"
+        android:text="Forgot Password?"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="17sp"
+        tools:ignore="PrivateResource"
+        android:onClick="forget"/>
 
 </LinearLayout>
 

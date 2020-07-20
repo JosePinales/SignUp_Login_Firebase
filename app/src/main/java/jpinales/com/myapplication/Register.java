@@ -50,8 +50,14 @@ public class Register extends AppCompatActivity {
         sign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String name = mName.getText().toString().trim();
                 String email1 =  mEmail.getText().toString().trim();
                 String pass1 = mPass.getText().toString().trim();
+
+                if (TextUtils.isEmpty(name)){
+                    mName.setError("Full Name is Required");
+                    return;
+                }
 
                 if (TextUtils.isEmpty(email1)){
                     mEmail.setError("Email is Required");

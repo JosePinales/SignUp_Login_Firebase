@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/user"
-        android:layout_marginBottom="60dp"/>
+        android:layout_marginBottom="30dp"/>
 
     <EditText
         android:id="@+id/name"
