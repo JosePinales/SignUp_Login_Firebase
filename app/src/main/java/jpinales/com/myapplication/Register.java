@@ -17,6 +17,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Register extends AppCompatActivity {
 
@@ -24,6 +26,7 @@ public class Register extends AppCompatActivity {
     Button sign;
     TextView login;
     FirebaseAuth auth;
+    String  name, email1, pass1;
 
 
     @SuppressLint("WrongViewCast")
@@ -40,19 +43,28 @@ public class Register extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
 
+        //Storage
+        String sName = mName.getText().toString();
+        String sEmail =  mEmail.getText().toString();
+        String sPass= mPass.getText().toString();
 
+
+
+/*
 
         if (auth.getCurrentUser() != null){
             startActivity(new Intent(getApplicationContext(),Welcome.class));
             finish();
         }
 
+ */
+
         sign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name = mName.getText().toString().trim();
-                String email1 =  mEmail.getText().toString().trim();
-                String pass1 = mPass.getText().toString().trim();
+                name = mName.getText().toString();
+                email1 =  mEmail.getText().toString();
+                pass1 = mPass.getText().toString();
 
                 if (TextUtils.isEmpty(name)){
                     mName.setError("Full Name is Required");
@@ -73,6 +85,9 @@ public class Register extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
+
+                            storeNewUserData();
+
                             Toast.makeText(Register.this, "User Created", Toast.LENGTH_SHORT).show();
                             //startActivity(new Intent(getApplicationContext(),Welcome.class));
                             Intent window = new Intent(Register.this, Welcome.class);
@@ -86,6 +101,15 @@ public class Register extends AppCompatActivity {
 
             }
         });
+
+    }
+
+    private void storeNewUserData() {
+        FirebaseDatabase rootNote = FirebaseDatabase.getInstance();
+        DatabaseReference reference = rootNote.getReference("User");
+        // name, email1, pass1;
+        userHelperClass helperClass = new userHelperClass(name, email1,pass1);
+        reference.child(name).setValue(helperClass);
 
     }
 

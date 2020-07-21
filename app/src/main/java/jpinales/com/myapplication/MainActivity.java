@@ -41,7 +41,8 @@ public class MainActivity extends AppCompatActivity {
         mPass.setText("");
     }
     public void Signup(View view){
-        startActivity(new Intent(getApplicationContext(),Register.class));
+        Intent window = new Intent(MainActivity.this, Register.class);
+        startActivity(window);
     }
 
     public void Login(View view){

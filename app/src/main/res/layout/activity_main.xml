@@ -64,7 +64,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:text="Login"
-        android:onClick="Login"/>
+        android:onClick="Signup"/>
 
     <Button
         android:id="@+id/btclear"
@@ -75,6 +75,7 @@
         android:layout_marginTop="5dp"
         android:onClick="click"
         android:text="Clear" />
+
     <TextView
         android:id="@+id/signup"
         android:layout_width="wrap_content"
@@ -82,10 +83,10 @@
         android:layout_gravity="center"
         android:layout_marginTop="20sp"
         android:layout_marginBottom="25sp"
+        android:onClick="Signup"
         android:text="Sign Up"
         android:textColor="@color/cardview_dark_background"
         android:textSize="20sp"
-        android:onClick="Signup"
         tools:ignore="PrivateResource" />
     <TextView
         android:id="@+id/forgot"
