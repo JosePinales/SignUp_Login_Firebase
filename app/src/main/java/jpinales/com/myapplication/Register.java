@@ -47,17 +47,7 @@ public class Register extends AppCompatActivity {
         String sName = mName.getText().toString();
         String sEmail =  mEmail.getText().toString();
         String sPass= mPass.getText().toString();
-
-
-
-/*
-
-        if (auth.getCurrentUser() != null){
-            startActivity(new Intent(getApplicationContext(),Welcome.class));
-            finish();
-        }
-
- */
+        
 
         sign.setOnClickListener(new View.OnClickListener() {
             @Override
