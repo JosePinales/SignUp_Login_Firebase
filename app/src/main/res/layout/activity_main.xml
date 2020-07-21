@@ -63,8 +63,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:text="Login"
-        android:onClick="Signup"/>
+        android:onClick="Login"
+        android:text="Login" />
 
     <Button
         android:id="@+id/btclear"
