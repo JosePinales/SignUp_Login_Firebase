@@ -35,6 +35,7 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        //linking variables
         mName = findViewById(R.id.name);
         mEmail = findViewById(R.id.email);
         mPass = findViewById(R.id.pass);
@@ -47,7 +48,7 @@ public class Register extends AppCompatActivity {
         String sName = mName.getText().toString();
         String sEmail =  mEmail.getText().toString();
         String sPass= mPass.getText().toString();
-        
+
 
         sign.setOnClickListener(new View.OnClickListener() {
             @Override
