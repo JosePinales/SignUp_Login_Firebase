@@ -16,15 +16,30 @@
 
         </activity>
         <activity android:name=".Register">
+
+        </activity>
+        <activity android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
 
-        </activity>
+        <service android:name=".Token">
+            <intent-filter>
+                <action android:name="com.google.firebase.INTACE_ID_EVENT"/>
+
+            </intent-filter>
+        </service>
+
+        <service android:name="MessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGE_EVENT"/>
+            </intent-filter>
+        </service>
+
     </application>
 
 </manifest>

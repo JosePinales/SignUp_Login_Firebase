@@ -86,7 +86,6 @@ public class Register extends AppCompatActivity {
                             startActivity(window);
                         }else {
                             Toast.makeText(Register.this, "Error " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-
                         }
                     }
                 });
@@ -95,11 +94,11 @@ public class Register extends AppCompatActivity {
         });
 
     }
-
+    //Store Data Method
     private void storeNewUserData() {
         FirebaseDatabase rootNote = FirebaseDatabase.getInstance();
         DatabaseReference reference = rootNote.getReference("User");
-        // name, email1, pass1;
+
         userHelperClass helperClass = new userHelperClass(name, email1,pass1);
         reference.child(name).setValue(helperClass);
 
